@@ -19,10 +19,10 @@ struct HomeView: View {
                 }
 
                 HStack(spacing: AppSpacing.l) {
-                    CalorieRing(consumed: day.calories, target: day.goal.calories)
+                    CalorieRing(consumed: day.calories, target: day.goal.calorieTarget)
                         .frame(width: 130, height: 130)
                     VStack(alignment: .leading, spacing: AppSpacing.xs) {
-                        Text("\(day.calories) / \(day.goal.calories) kcal").font(AppTypography.headline)
+                        Text("\(day.calories) / \(day.goal.calorieTarget) kcal").font(AppTypography.headline)
                         Text("Eaten today").font(AppTypography.caption).foregroundStyle(AppColors.textSecondary)
                     }
                     Spacer(minLength: 0)
@@ -30,9 +30,9 @@ struct HomeView: View {
                 .cardStyle()
 
                 HStack(spacing: AppSpacing.s) {
-                    MacroProgressView(name: "Protein", grams: day.protein, goal: day.goal.protein, color: AppColors.protein)
-                    MacroProgressView(name: "Carbs", grams: day.carbs, goal: day.goal.carbs, color: AppColors.carbs)
-                    MacroProgressView(name: "Fat", grams: day.fat, goal: day.goal.fat, color: AppColors.fat)
+                    MacroProgressView(name: "Protein", grams: day.protein, goal: day.goal.proteinTarget, color: AppColors.protein)
+                    MacroProgressView(name: "Carbs", grams: day.carbs, goal: day.goal.carbohydrateTarget, color: AppColors.carbs)
+                    MacroProgressView(name: "Fat", grams: day.fat, goal: day.goal.fatTarget, color: AppColors.fat)
                 }
 
                 SectionHeader(title: "Today's meals")
